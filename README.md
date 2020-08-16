@@ -1,9 +1,9 @@
-# react-lessons
-Classes on react basics for seasoned developers.
-Each branch is a different lesson, navigate through them using Github.
+# React Learning
 
-# when forking our code, please add us as contributers:
-* [sj-freitas](https://github.com/sj-freitas)
-* [matepaiva](https://github.com/matepaiva)
-* [narayon](https://github.com/Narayon)
+Exercises to learn React with a hands-on approach.
+Each branch is a different lesson/exercise.
+Navigate the differente exercises with the different branchs.
 
+## Presentation Slides
+
+[React-beginner](https://slides.com/rubenmateus/react-beginner/live)
