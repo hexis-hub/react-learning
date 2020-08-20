@@ -6,4 +6,5 @@ Navigate the differente exercises with the different branchs.
 
 ## Presentation Slides
 
+[Modern JS](https://slides.com/rubenmateus/modern-js)
 [React-beginner](https://slides.com/rubenmateus/react-beginner/live)
