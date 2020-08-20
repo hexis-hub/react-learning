@@ -1,16 +1,34 @@
 import React from 'react';
 import Square from './Square';
+import { calculateWinner } from '../utils/gameChecker';
 
 export default class Board extends React.Component {
   state = {
     squares: Array(9).fill(null),
+    xIsNext: true,
   };
 
   handleClick(i) {
     const squares = [...this.state.squares];
-    squares[i] = 'X';
-    this.setState({squares: squares});
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+
+    this.setState({
+      squares: squares,
+      xIsNext: !this.state.xIsNext,
+    });
   }
+
+  getStatus = () => {
+    const winner = calculateWinner(this.state.squares);
+
+    return winner ?
+      `Winner: ${winner}` :
+      `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+  };
 
   renderSquare(i) {
     return(
@@ -22,7 +40,7 @@ export default class Board extends React.Component {
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = this.getStatus();
 
     return (
       <div>
