@@ -4,7 +4,7 @@ import Tags from './tags/Tags';
 
 const App = () => {
   const [save, setSave] = useState(false);
-  
+
   useEffect(() => {
     setTimeout(() => {
       setSave(true);
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Tags timer={save} />
+      <Tags save={save} />
     </div>
   );
 };

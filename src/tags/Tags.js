@@ -12,7 +12,6 @@ const Tags = ({ save }) => {
   const addInput = useRef();
 
   useEffect(() => {
-    // should only fetch data when component is mounted
     setTags(tagsFromJson);
     addInput.current.focus();
   }, []);
