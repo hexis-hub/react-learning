@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
-import { getUsers } from '../api/requester'
-import SearchBox from './SearchBox';
+import { getUsers } from '../api/requester';
+import { Input } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 import Users from './Users';
 
 const ListPage = () => {
 
     const [users, setUsers] = useState([]);
 
-    const requestAPI = async (username) => {
+    const requestAPI = async (e) => {
 
-        var usersList = await getUsers(username)
+        if(e.keyCode === 13){
 
-        setUsers(usersList)
+            let usersList = await getUsers(e.target.value)
+
+            setUsers(usersList)
+        }
     }
 
     return (
         <div>
             <div>
-                <SearchBox onSubmit={requestAPI}/>
+                <Input size="large" placeholder="Name" prefix={<UserOutlined />} onKeyUp={requestAPI} />
             </div>
             <div>
                 <Users users={users}/>

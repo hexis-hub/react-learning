@@ -12,6 +12,7 @@ async function getUsers(username) {
 async function getUser(username) {
     try {
         const response = await get(`https://api.github.com/users/${username}`);
+        console.log(response)
         return response;
     } catch (error) {
         return null;

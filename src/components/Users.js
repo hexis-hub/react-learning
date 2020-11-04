@@ -1,6 +1,7 @@
 import './Users.css'
 import { Table } from 'antd';
 import { Link } from "react-router-dom";
+import { PlusCircleOutlined } from '@ant-design/icons';
 
 const Users = ({users}) => {
 
@@ -9,7 +10,7 @@ const Users = ({users}) => {
           title: 'Profile Pic',
           dataIndex: 'avatar_url',
           key: 'profilePic',
-          render: (url, user) => <img className="profile-pic" alt={`Picture of value ${user.login}`} src={url}></img>,
+          render: (url, user) => <img className="profile-pic" alt={user.login} src={url}></img>,
         },
         {
           title: 'Id',
@@ -24,13 +25,13 @@ const Users = ({users}) => {
         {
           title: 'info',
           dataIndex: '',
-          render: (_, user) => <Link to={`/user/${user.login}`} className="info-btn">[+]</Link>
+          render: (_, user) => <Link to={`/user/${user.login}`} className="info-btn"><PlusCircleOutlined style={{fontSize: 20}} /></Link>
         }
       ];
 
     return(
         <div id="users" className="mt10">
-            <Table columns={columns} dataSource={users} />
+            <Table key="users-table" columns={columns} dataSource={users} className="width-50" bordered />
         </div>
     )
 }
