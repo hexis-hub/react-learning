@@ -1,1 +1,0 @@
-export const saveToServer = () => console.log('saved')
