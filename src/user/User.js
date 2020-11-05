@@ -16,10 +16,12 @@ const queroLinkJA = () =>{
   return (
     <div className='UserContainer'>
       <img src={item.avatar_url} height={100} width={100} alt="yes"></img> 
-      <div className='User'>
+      <div className='anime'>
         {item.login}
       </div>   
-      <Link to={queroLinkJA}>VAI PARA O GAJO PAH</Link>     
+      <div className='anime'>
+        <Link to={queroLinkJA}>VAI PARA O GAJO PAH</Link> 
+      </div>          
     </div>
   );
 }

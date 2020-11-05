@@ -28,7 +28,7 @@ const Details = () => {
 
   return (
     <div className='UserContainer'>
-      <div>  
+      <div className='baza-daqui'>  
         <Link to="/">BAZA JA DAQUI</Link>     
       </div>
       <span>{user.login}</span>
