@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { getUser } from '../api/requester';
 import { useParams } from "react-router-dom";
+import { getUser } from '../api/requester';
 
 const Profile = () => {
-    
+
   const { username } = useParams();
-  
-  const [ user, setUser ] = useState({});
+
+  const [user, setUser] = useState({});
 
   const requestAPI = async () => {
 
     let response = await getUser(username)
 
-  console.log(response)
-    if(response){
+    console.log(response)
+    if (response) {
 
       setUser(response.data)
     }
