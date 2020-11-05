@@ -1,8 +1,8 @@
-.Tag {
+.User {
 flex: 1;
 }
 
-.TagContainer {
+.UserContainer {
   display: flex;
   flex-direction: row;
   width: 5rem;

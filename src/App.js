@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import Tags from './tags/Tags';
+import Users from './users/Users';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Details from './user/Details';
 
-const App = () => {
-  const [save, setSave] = useState(false);
+class App extends React.Component {
 
-  useEffect(() => {
-    setTimeout(() => {
-      setSave(true);
-    }, 5000);
-  }, []);
-
-  return (
-    <div className='App'>
-      <Tags save={save} />
-    </div>
-  );
-};
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Users} />
+          <Route path="/:id" component={Details} />
+        </Switch>    
+      </Router>
+    );
+  }
+}
 
 export default App;
