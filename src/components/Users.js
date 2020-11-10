@@ -30,9 +30,7 @@ const Users = ({ users }) => {
   ];
 
   return (
-    <div id="users" className="mt10">
-      <Table rowKey={(user) => user.id} columns={columns} dataSource={users} bordered />
-    </div>
+    <Table rowKey={(user) => user.id} columns={columns} dataSource={users} bordered />
   )
 }
 

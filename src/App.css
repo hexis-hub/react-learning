@@ -38,10 +38,6 @@
   }
 }
 
-h4 {
-  color: white;
-}
-
 .minHeight {
   min-height: 100vh;
 }
@@ -56,4 +52,8 @@ h4 {
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+.mt10{
+  margin-top: 2rem;
 }

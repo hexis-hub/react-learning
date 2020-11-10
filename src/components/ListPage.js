@@ -22,11 +22,11 @@ const ListPage = () => {
     }
 
     return (
-        <Layout className="minHeight">
+        <Layout key="listpage-layout" className="minHeight">
             <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
                 <div style={{ width: '20rem', margin: '0 auto' }}>
                     <img src={logo} className="App-logo" alt="logo" style={{ float: "left" }} />
-                    <h4 style={{ float: "right", fontSize: '1.3rem' }}>GitHub Profile Searcher</h4>
+                    <h4 style={{ float: "right", fontSize: '1.3rem', color: 'white' }}>GitHub Profile Searcher</h4>
                 </div>
             </Header>
             <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
@@ -37,7 +37,7 @@ const ListPage = () => {
                     <Users users={users} />
                 </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>©2018 GitHub Profile Searcher</Footer>
+            <Footer style={{ textAlign: 'center' }}>© 2020 GitHub Profile Searcher</Footer>
         </Layout>
     )
 }
