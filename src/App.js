@@ -1,21 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Tags from './tags/Tags';
+import Home from './components/Home';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import UserDetails from './components/UserDetails';
 
-const App = () => {
-  const [save, setSave] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSave(true);
-    }, 5000);
-  }, []);
-
-  return (
-    <div className='App'>
-      <Tags save={save} />
+function App() {
+  return (    
+    <div className="App">     
+      <Router>      
+      <div>
+        <hr />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>         
+          <Route path="/UserDetails/:userid" children={<UserDetails />} />   
+        </Switch>
+      </div>
+    </Router>
     </div>
   );
-};
+}
 
 export default App;
